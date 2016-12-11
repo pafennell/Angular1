@@ -1,9 +1,59 @@
+<!-- Angular repeater example -->
 <!DOCTYPE html>
 <html lang=en-ir ng-app="myApp">
     <head>
-    
+    <title>My App</title>
+        <meta http-equiv="X-UA-Compatible" content="IE-Edge" >
+        <meta charset="UTF-8">
+         <link rel="stylesheet"  href="/style/bootstrap.min.css" />
+        <script src="https://code.angularjs.org/1.6.0-rc.2/angular.js"></script> 
+        
     </head>
     <body>
-    
-    
+    <nav class="navbar navbar-default" role="navigation">
+            <h3> Angular Example</h3>
+            <div class="navbar-header">
+            </div>
+        </nav>
+     
+        <div class="container"> 
+            <div ng-Controller="mainController"> 
+                <table>
+                     <thead>
+                        <tr>
+                            <th>
+                                Firstname
+                            </th>
+                            <th>
+                                lastname
+                            </th>
+                            <th>
+                                Age
+                            </th>
+                            <th>
+                                Address
+                            </th>               
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="employee in employees">
+                            <td>
+                                {{employee.firstname}}
+                            </td>
+                            <td>
+                                {{employee.lastname}}
+                            </td>
+                            <td>
+                                {{employee.age}}
+                            </td>
+                            <td>
+                                {{employee.address}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>   
     </body>
+     <script src="/scripts/app2.js"></script>
+</html>

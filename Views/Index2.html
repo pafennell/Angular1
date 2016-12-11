@@ -1,0 +1,34 @@
+<!-- Angular List Example -->
+<!DOCTYPE html>
+<html lang=en-ir ng-app="myApp2">
+    <head>
+    <title>My App</title>
+        <meta http-equiv="X-UA-Compatible" content="IE-Edge" >
+        <meta charset="UTF-8">
+        <link rel="stylesheet"  href="/style/bootstrap.min.css" />
+        <script src="https://code.angularjs.org/1.6.0-rc.2/angular.js"></script> 
+        <script src="/scripts/app3.js"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-default" role="navigation">
+            <h3> Angular Example</h3>
+            <div class="navbar-header">
+            </div>
+        </nav>
+     
+        <div class="container"> 
+            <div ng-Controller="mainController"> 
+                <ul>
+                    <li ng-repeat="country in countries">
+                          {{country.name}} - Index - {{$index}}
+                        <ul>
+                            <li ng-repeat="city in country.cities">
+                            {{city.name}} - Parent-Index - {{ $parent.$index}},Index - {{$index}}
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>

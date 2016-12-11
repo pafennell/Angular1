@@ -1,3 +1,4 @@
+<!-- Angular Dynamic Update -->
 <!DOCTYPE html>
 <html lang=en-ir ng-app="myApp">
     <head>
@@ -10,14 +11,82 @@
     </head>
     <body>
         <nav class="navbar navbar-default" role="navigation">
-            <h1> Angular Example</h1>
+            <h3> Angular Example</h3>
             <div class="navbar-header">
             </div>
         </nav>
      
         <div class="container"> 
-            <div ng-Controller="mainController"> <!-- reference the controller from app.js this will be the view for the model e.g. mainController-->
-                <h1> Within controller</h1>
+            <div ng-Controller="mainController"> 
+                <table>
+                    <tr>
+                        <td>
+                           Firstname: 
+                        </td>
+                        <td>
+                            <input ng-model="employee.firstname">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Lastname:
+                        </td>
+                        <td>
+                            <input ng-model="employee.lastname">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            age:
+                        </td>
+                        <td>
+                            <input ng-model="employee.age">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                           address: 
+                        </td>
+                        <td>
+                            <input ng-model="employee.address">
+                        </td>
+                    </tr>
+                </table>
+                <br /><br />
+                <table>
+                    <tr>
+                        <td>
+                            FirstName: 
+                        </td>
+                        <td>
+                             {{ employee.firstname }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            LastName: 
+                        </td>
+                        <td>
+                             {{ employee.lastname }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Age: 
+                        </td>
+                        <td>
+                             {{ employee.age }}
+                        </td>
+                    </tr>
+                    <tr>
+                             <td>
+                                 Address
+                             </td>
+                        <td>
+                             {{ employee.address }}
+                        </td>
+                    </tr>
+                </table>
             </div>
         </div>
     </body>
