@@ -1,0 +1,50 @@
+<!- Angular List Example -->
+<!DOCTYPE html>
+<html lang=en-ir ng-app="myApp">
+    <head>
+    <title>My App</title>
+        <meta http-equiv="X-UA-Compatible" content="IE-Edge" >
+        <meta charset="UTF-8">
+        <link rel="stylesheet"  href="/style/bootstrap.min.css" />
+        <script src="https://code.angularjs.org/1.6.0-rc.2/angular.js"></script>  
+        <script src="/scripts/app4.js"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-default" role="navigation">
+            <h3> Angular Example</h3>
+            <div class="navbar-header">
+            </div>
+        </nav>
+     
+        <div class="container"> 
+            <div ng-Controller="mainController"> 
+                <table>
+                    <thead>
+                        <th>Name:</th>
+                        <th>Likes</th>
+                        <th>Dislikes</th>
+                        <th>Likes/Dislikes</th>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="technology in technologies">
+                            <td>
+                                {{ technology.name }}
+                            </td>
+                            <td>
+                                 {{ technology.likes }}
+                            </td>
+                            <td>
+                                 {{ technology.dislikes }}
+                            </td>
+                            <td>
+                                 <input type="button" value="Like" ng-click="technologieLikes(technology)">
+                                <input type="button" value="Dislike" ng-click="technologieDislikes(technology)">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+    
+</html>
