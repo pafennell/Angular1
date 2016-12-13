@@ -1,0 +1,12 @@
+.container table{
+    border-style: solid;
+    border-width: 2px;
+}
+
+.container table td{
+   padding-left: 3em;
+   padding-right: 3em;
+   border-style: solid;
+   border-width: 2px;
+   border-color: #000;
+}

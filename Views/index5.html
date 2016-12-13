@@ -1,0 +1,49 @@
+<!-- Angular Dynamic Update -->
+<!DOCTYPE html>
+<html lang=en-ir ng-app="myApp">
+    <head>
+    <title>My App</title>
+        <meta http-equiv="X-UA-Compatible" content="IE-Edge" >
+        <meta charset="UTF-8">
+        <link rel="stylesheet"  href="/style/bootstrap.min.css" />
+        <link rel="stylesheet"  href="/style/style.css" />
+        <script src="/scripts/angular.js"></script> 
+        <script src="/scripts/app5.js"></script>
+        
+       
+    </head>
+    <body>
+        <nav class="navbar navbar-default" role="navigation">
+            <h3> Formating</h3>
+            <div class="navbar-header">
+            </div>
+        </nav>
+     
+        <div class="container">          
+            <div ng-Controller="mainController"> 
+            Rows to display: <input type="number" step="1" min="0" max="5" ng-model="rowLimit" />
+            <br /><br />
+               <table>
+                   <thead>
+                       <th>Name</th>
+                       <th>Date Of Birth</th>
+                       <th>Gender</th>
+                       <th>Salery (number)</th>
+                       <th>Salery (currency)</th>
+                   </thead>
+                   <tbody>
+                        <tr ng-repeat="employee in employees | limitTo:rowLimit">
+                            <td>{{ employee.name | uppercase }}</td>
+                             <td>{{ employee.dateOfBirth | date: "dd/mm/yyyy"}}</td>
+                             <td>{{ employee.gender |lowercase }}</td>
+                             <td>{{ employee.salery | number: 2}}</td>
+                             <td>{{ employee.salery | currency: "€" : 2}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            
+            </div>
+        </div>
+    </body>
+    
+</html>
