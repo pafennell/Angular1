@@ -1,0 +1,53 @@
+<!-- Angular Search -->
+<!DOCTYPE html>
+<html lang=en-ir ng-app="myApp">
+    <head>
+    <title>My App</title>
+        <meta http-equiv="X-UA-Compatible" content="IE-Edge" >
+        <meta charset="UTF-8">
+        <link rel="stylesheet"  href="../Style/bootstrap.min.css" />
+        <link rel="stylesheet"  href="../Style/style.css" />  
+        <script src="../scripts/angular.js"></script>
+        <script src="../scripts/app7.js"></script>
+       
+    </head>
+    <body>
+        <nav class="navbar navbar-default" role="navigation">
+            <h3>Search</h3>
+            <div class="navbar-header">
+            </div>
+        </nav>
+     
+        <div class="container">          
+            <div ng-Controller="mainController"> 
+            Search: <input type="text" placeholder="search" ng-model="searchText" />
+            <input type="checkbox" placeholder="search" ng-model="exactMatch.toLocaleLowerCase" />:Exact Match
+                <br /><br />
+               <table>
+                   <thead>
+                       <tr > 
+                           <th>Name</th>
+                           <th>Date Of Birth</th>
+                           <th>Gender</th>
+                           <th>City</th>
+                           <th>Salery (number)</th>
+                           <th>Salery (currency)</th>
+                       </tr>
+                   </thead>
+                   <tbody>
+                        <tr ng-repeat="employee in employees | filter: searchText: exactMatch">
+                             <td>{{ employee.name | uppercase }}</td>
+                             <td>{{ employee.dateOfBirth | date: "dd/mm/yyyy"}}</td>
+                             <td>{{ employee.gender }}</td>
+                             <td>{{ employee.city }}</td>
+                             <td>{{ employee.salery | number: 2}}</td>
+                             <td>{{ employee.salery | currency: "€" : 2}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            
+            </div>
+        </div>
+    </body>
+    
+</html>
